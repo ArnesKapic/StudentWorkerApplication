@@ -1,0 +1,41 @@
+@model StudentWorkerModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Bank Account Web App</title>
+</head>
+<body>
+    <h1>Student Worker</h1>
+    <form asp-action="Index" method="post">
+        <div>
+            <label asp-for="Name">Student Name</label>
+            <input asp-for="Name" />
+        </div>
+        <div>
+            <label asp-for="ID">ID</label>
+            <input asp-for="ID" />
+        </div>
+        <div>
+            <label asp-for="HourlyPay">Hourly Rate</label>
+            <input asp-for="HourlyPay" />
+        </div>
+        <div>
+            <label asp-for="HoursWorked">Hours Worked</label>
+            <input asp-for="HoursWorked" />
+        </div>
+        <div>
+            <label> Weekly Salary</label>
+            <input value="@ViewBag.AmtPaid.ToString("C2")" readonly />
+        </div>
+        <button type="submit">Submit</button>
+        <a asp-action="Index">Clear</a>
+    </form>
+
+</body>
+</html>
